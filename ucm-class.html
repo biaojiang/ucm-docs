@@ -1,0 +1,127 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ucm-class &#8212; UCM-ultrasound 0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ucm-GUI" href="ucm-GUI.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ucm-class">
+<h1>Ucm-class<a class="headerlink" href="#ucm-class" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="unobserved-components-model">
+<h2>Unobserved components model:<a class="headerlink" href="#unobserved-components-model" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\begin{split}y_t &amp;= \mu_t + c_t\\
+\mu_{t+1} &amp;=\mu_t + \xi_t,\quad \xi_t \sim N(0, \sigma_\xi^2)\\
+c_{t+1} &amp;= \rho_c\left( \tilde{c}_t \cos\lambda_c +\tilde{c}_t^* \sin\lambda_c\right)+ {\tilde{\omega}}_t\\
+c_{t+1}^* &amp;= \rho_c\left( -{\tilde{c}}_t \sin\lambda_c +\tilde{c}_t^* \cos\lambda_c \right) + {\tilde{\omega}}_t^*\\
+\tilde{\omega}_t,\;\tilde{\omega}_t^*&amp; \sim \text{i.i.d. } N(0,\sigma_{\tilde{\omega}}^2)\end{split}\]</div>
+<dl class="class">
+<dt id="ucm">
+<em class="property">class </em><code class="descname">ucm</code><a class="headerlink" href="#ucm" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#ucm" title="ucm"><code class="xref py py-class docutils literal"><span class="pre">ucm</span></code></a> define the unobserved components model in multi-thread computing.</p>
+<dl class="method">
+<dt id="ucm.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>Im</em>, <em>cycle_period_bounds=(20</em>, <em>28)</em><span class="sig-paren">)</span><a class="headerlink" href="#ucm.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>self.Im = Im
+self.cycle_period_bounds = cycle_period_bounds</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ucm.res_ucm_cb">
+<code class="descname">res_ucm_cb</code><span class="sig-paren">(</span><em>self</em>, <em>iy</em><span class="sig-paren">)</span><a class="headerlink" href="#ucm.res_ucm_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute and return UCM results for each image line.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ucm.ucm_cb">
+<code class="descname">ucm_cb</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#ucm.ucm_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up multi-core tasks.
+<a class="reference internal" href="#ucm.ucm_cb" title="ucm.ucm_cb"><code class="xref py py-meth docutils literal"><span class="pre">ucm_cb()</span></code></a> call <a class="reference internal" href="#ucm.res_ucm_cb" title="ucm.res_ucm_cb"><code class="xref py py-meth docutils literal"><span class="pre">res_ucm_cb()</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="ucm-GUI.html" title="next chapter">ucm-GUI</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Biao Jiang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/ucm-class.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

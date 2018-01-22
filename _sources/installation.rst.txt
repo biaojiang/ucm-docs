@@ -1,0 +1,20 @@
+.. highlight:: sh
+
+Installation
+============
+
+This tutorial will walk you through the process of installing Ucm-ultrasound. To follow,
+you really only need three basic things:
+
+* Python 3.6+.
+* Statsmodels.
+* Numpy.
+
+Step 1: Ucm-ultrasound
+----------------------
+
+Step 2: Build Ucm-ultrasound
+----------------------------
+
+Step 3: Test Ucm-ultrasound
+---------------------------

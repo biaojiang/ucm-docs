@@ -1,0 +1,30 @@
+Ucm-class
+=========
+
+Unobserved components model:
+----------------------------
+.. math::
+    y_t &= \mu_t + c_t\\
+    \mu_{t+1} &=\mu_t + \xi_t,\quad \xi_t \sim N(0, \sigma_\xi^2)\\
+    c_{t+1} &= \rho_c\left( \tilde{c}_t \cos\lambda_c +\tilde{c}_t^* \sin\lambda_c\right)+ {\tilde{\omega}}_t\\
+    c_{t+1}^* &= \rho_c\left( -{\tilde{c}}_t \sin\lambda_c +\tilde{c}_t^* \cos\lambda_c \right) + {\tilde{\omega}}_t^*\\
+    \tilde{\omega}_t,\;\tilde{\omega}_t^*& \sim \text{i.i.d. } N(0,\sigma_{\tilde{\omega}}^2)
+
+
+.. class:: ucm
+
+    :class:`ucm` define the unobserved components model in multi-thread computing.
+
+    .. method:: __init__(self, Im, cycle_period_bounds=(20,28))
+
+        self.Im = Im
+        self.cycle_period_bounds = cycle_period_bounds
+
+    .. method:: res_ucm_cb(self, iy)
+
+        Compute and return UCM results for each image line.
+
+    .. method:: ucm_cb(self)
+
+        Set up multi-core tasks.
+        :meth:`ucm_cb` call :meth:`res_ucm_cb`.
