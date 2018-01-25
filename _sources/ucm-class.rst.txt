@@ -22,7 +22,7 @@ Unobserved components model:
 
     .. method:: res_ucm_cb(self, iy)
 
-        Compute and return UCM results for each image line.
+        Compute and return the UCM results for each image line.
 
     .. method:: ucm_cb(self)
 
